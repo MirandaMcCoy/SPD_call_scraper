@@ -52,7 +52,7 @@ class SearchRange():
         self.from_date = datetime.datetime.strftime(self.obj_from_date, "%m/%d/%Y") 
 
         self.obj_from_time = datetime.time(hour = last_date_time.hour, minute = last_date_time.minute, second = last_date_time.second)
-        self.from_time = self.obj_from_time.strftime("%-I:%M")
+        self.from_time = self.obj_from_time.strftime("%#I:%M")
 
         self.obj_to_date = self.obj_from_date + datetime.timedelta(days=30)
         self.to_date = datetime.datetime.strftime(self.obj_to_date, "%m/%d/%Y")
@@ -70,7 +70,7 @@ class Crawler(SearchRange):
     def __init__(self, base_url, search_start_date):
         SearchRange.__init__(self, search_start_date)
         self.base_url = base_url
-        self.browser = webdriver.Chrome("/Users/dev/Source/chromedriver")
+        self.browser = webdriver.Chrome(r"C:\Users\wrh6748\SPD_call_scraper\chromedriver.exe")
         self.page_count = 0
 
         # Counters
